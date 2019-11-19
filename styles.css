@@ -1,0 +1,60 @@
+body {
+  background-color: lightblue;
+  color: black;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div {
+  margin: auto;
+}
+
+table, th, tr, td {
+  background: white;
+  border: black solid 1px;
+  padding: 1px;
+  align-items: center;
+  font-size: 15px;
+
+}
+
+table {
+  width: 600px;
+}
+
+td {
+  width: 150px;
+}
+
+button {
+  background: lightyellow;
+  color: darkorange;
+  padding: 5px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+#scoreboard {
+
+}
+
+#message_section{
+  background-color: lightgreen;
+  color: darkgreen;
+  width: 70%;
+  margin-left: 0;
+}
+
+#dice_table{
+
+  background: white;
+  width: 60%;
+  text-align: center;
+  padding: 3px;
+
+}
+
+.dice {
+  background-color: red;
+}

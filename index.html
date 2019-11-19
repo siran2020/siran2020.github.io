@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <title>Yahtzee</title>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=us-ascii" http-equiv="Content-type" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="titleName">Yahtzee</h1>
+        <button type="button" id="roll_button">Roll the Dice</button>
+        Username: <input type="text" name="username" id="username">
+
+
+
+
+    </div>
+    <!-- Header -->
+    <div class="dice_section">
+        <table id="dice_table">
+            <tr>
+
+                <td class="blank dice" id="dice_1">  <img src="images/blankdice.png"  width="70"/></td>
+                  <td class="blank dice" id="dice_2">  <img src="images/blankdice.png"  width="70"/></td>
+                  <td class="blank dice" id="dice_3">  <img src="images/blankdice.png"  width="70"/></td>
+                  <td class="blank dice" id="dice_4">  <img src="images/blankdice.png"  width="70"/></td>
+                  <td class="blank dice" id="dice_5">  <img src="images/blankdice.png"  width="70"/></td>
+
+            <!--    <td class="dice" id="dice_1"><img src="images/one.svg" width="70" /></td>
+                <td class="dice" id="dice_2"><img src="images/two.svg" width="70" /></td>
+                <td class="dice" id="dice_3"><img src="images/three.svg" width="70" /></td>
+                <td class="dice" id="dice_4"><img src="images/four.svg" width="70" /></td>
+                <td class="dice" id="dice_5"><img src="images/five.svg" width="70" /></td>-->
+
+            </tr>
+        </table>
+    </div>
+    <div id="message_section">
+      Welcome to Yahtzee! Please enter your user name above!
+    </div>
+    <div id="scoreboard">
+        <div id="upper_section">
+            <table>
+                <tr>
+                    <th class="scoresheet_header" id="category_header">UPPER SECTION</th>
+                    <th class="scoresheet_header" id="description_header">HOW TO SCORE</th>
+                    <th class="scoresheet_header" id="score_header">GAME #1</th>
+                </tr>
+
+                <tr>
+                    <td class="category aces" id="aces_category">Aces <img src="images/one.svg" width="20" /> =1</td>
+                    <td class="description aces" id="aces_description">Count and Add Only Aces</td>
+                    <td class="score aces" id="aces_score">
+                        <input type="text" name="one_score_value" class="score_value" id="one_score_value">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="category twos" id="twos_category">Twos <img src="images/two.svg" width="20" /> =2</td>
+                    <td class="description twos" id="twos_description">Count and Add Only Twos</td>
+                    <td class="score twos" id="twos_score">
+                        <input type="text" name="two_score_value" class="score_value" id="two_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category threes" id="threes_category">Threes <img src="images/three.svg" width="20" /> =3</td>
+                    <td class="description threes" id="threes_description">Count and Add Only Threes</td>
+                    <td class="score threes" id="threes_score">
+                        <input type="text" name="three_score_value" class="score_value" id="three_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category fours" id="fours_category">Fours <img src="images/four.svg" width="20" /> =4</td>
+                    <td class="description fours" id="fours_description">Count and Add Only Fours</td>
+                    <td class="score fours" id="fours_score">
+                        <input type="text" name="four_score_value" class="score_value" id="four_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category fives" id="fives_category">Fives <img src="images/five.svg" width="20" /> =5</td>
+                    <td class="description fives" id="fives_description">Count and Add Only Fives</td>
+                    <td class="score fives" id="fives_score">
+                        <input type="text" name="five_score_value" class="score_value" id="five_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category sixes" id="sixes_category">Sixes <img src="images/six.svg" width="20" /> =6</td>
+                    <td class="description sixes" id="sixes_description">Count and Add Only sixes</td>
+                    <td class="score sixes" id="sixes_score">
+                        <input type="text" name="six_score_value" class="score_value" id="six_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category upper_score summary" id="upper_score_category">TOTAL SCORE</td>
+                    <td class="description upper_score" id="upper_score_description"> -- </td>
+                    <td class="score upper_score" id="upper_score"></td>
+                </tr>
+                <tr>
+                    <td class="category upper_bonus summary" id="upper_bonus_category">BONUS</td>
+                    <td class="description upper_bonus" id="upper_bonus_description"> If total score is more than 63, score 35 </td>
+                    <td class="score upper_bonus" id="upper_bonus"></td>
+                </tr>
+                <td class="category upper_total summary" id="upper_total_category">TOTAL</td>
+                <td class="description upper_total" id="upper_total_description"> of upper section </td>
+                <td class="score upper_total" id="upper_total"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Upper Section -->
+        <div id="lower_section">
+            <table>
+                <tr>
+                    <th class="scoresheet_header" id="lower_category_header">LOWER SECTION</th>
+                    <th class="scoresheet_header" id="lower_description_header"></th>
+                    <th class="scoresheet_header" id="lower_score_header"></th>
+                </tr>
+                <tr>
+                    <td class="category 3_kind" id="3_kind_category">3 of a kind</td>
+                    <td class="description 3_kind" id="3_kind_description">Add Total of All Dice</td>
+                    <td class="score 3_kind" id="3_kind_score">
+                        <input type="text" name="3_kind_score_value" class="score_value" id="3_kind_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category 4_kind" id="4_kind_category">4 of a kind</td>
+                    <td class="description 4_kind" id="4_kind_description">Add Total of All Dice</td>
+                    <td class="score 4_kind" id="4_kind_score">
+                        <input type="text" name="4_kind_score_value" class="score_value" id="4_kind_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category full_house" id="full_house_category">Full House</td>
+                    <td class="description full_house" id="full_house_description">Score 25</td>
+                    <td class="score full_house" id="full_house_score">
+                        <input type="text" name="full_house_score_value" class="score_value" id="full_house_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category sm_straight" id="sm_straight_category">Small Straight (Sequence of 4)</td>
+                    <td class="description sm_straight" id="sm_straight_description">Score 30</td>
+                    <td class="score sm_straight" id="sm_straight_score">
+                        <input type="text" name="sm_straight_score_value" class="score_value" id="sm_straight_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category lg_straight" id="lg_straight_category">Large Straight (Sequence of 5)</td>
+                    <td class="description lg_straight" id="lg_straight_description">Score 40</td>
+                    <td class="score lg_straight" id="lg_straight_score">
+                        <input type="text" name="lg_straight_score_value" class="score_value" id="lg_straight_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category yahtzee" id="yahtzee_category">YAHTZEE (5 of a kind)</td>
+                    <td class="description yahtzee" id="yahtzee_description">Score 50</td>
+                    <td class="score yahtzee" id="yahtzee_score">
+                        <input type="text" name="yahtzee_score_value" class="score_value" id="yahtzee_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category chance" id="chance_category">Chance </td>
+                    <td class="description chance" id="chance_description">Score Total Of all 5 Dice</td>
+                    <td class="score chance" id="chance_score">
+                        <input type="text" name="chance_score_value" class="score_value" id="chance_score_value">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="category summary" id="lower_score_category">Total (Of Lower Section) </td>
+                    <td class="description" id="lower_score_description"></td>
+                    <td class="score" id="lower_score"></td>
+                </tr>
+                <tr>
+                    <td class="category summary" id="bottom_upper_score_category">Total (Of Upper Section)</td>
+                    <td class="description" id="bottom_upper_score_description"></td>
+                    <td class="score" id="bottom_upper_score"></td>
+                </tr>
+                <tr>
+                    <td class="category summary" id="grand_total_category">Grand Total </td>
+                    <td class="description" id="grand_total_description"></td>
+                    <td class="score" id="grand_total"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Lower Section -->
+    </div>
+    <!-- Scorecard -->
+    <div id = "savegame_section">
+      <button type="button" id="save_button">Save Game</button>
+      <button type="button" id="load_button">Load Game</button>
+    </div>
+
+    <div id="footer">
+        <h6><img src="https://upload.wikimedia.org/wikipedia/en/4/43/Trinity_School_logo.png"
+    width="30"/>Brought to you by the cool kids in Software Engineering, 2017</h6>
+    </div>
+    <!-- Footer -->
+</body>
+<script src="scripts.js"></script>
+
+</html>
